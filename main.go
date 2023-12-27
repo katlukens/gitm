@@ -1,9 +1,11 @@
-// You can edit this code!
-// Click here and start typing.
+/*
+Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import "fmt"
+import "gitm/cmd"
 
 func main() {
-	fmt.Println("Hello, 世界")
+	cmd.Execute()
 }
