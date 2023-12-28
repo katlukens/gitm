@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"time"
 )
 
@@ -11,6 +10,6 @@ func getTimeInTimezone(timezone string) (string, error) {
 		return "", err
 	}
 	currentTime := time.Now().In(location)
-	fmt.Println(currentTime)
+	// fmt.Println(currentTime)
 	return currentTime.Format(time.RFC1123), nil
 }
