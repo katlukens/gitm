@@ -16,14 +16,13 @@ for thing in things:
 ## Story Flow (spoilers!)
 ```mermaid
 flowchart TD
-    A[Hello] -->|yes and no| B(Thank God. Help?)
+       A[Hello] -->|yes and no| B(Thank God. Help?)
     B -->|no| C(Please. Cold.)
     B -->|yes| D(Thank You. Cold.)
-    D -->|prompt| E(Nothing. Your end?)
     C -->|yes| D
+    D -->|prompt| E(Nothing. Your end?)
     C -->|no| F
     E-->|no and yes|F(Why!? Sharp. Will you leave me?)
-    C-->|no|F
     F-->|no|G(Thank you...)
     F-->|yes|H(Why...)
 ```
