@@ -28,3 +28,6 @@ flowchart TD
     F-->|yes|H(Why...)
 ```
 
+
+### Creator's Note
+The situation wherein the user must force quit the program is a styleistic choice, not an error in programing.
