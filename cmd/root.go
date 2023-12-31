@@ -41,11 +41,15 @@ func Execute() {
 
 // greeting introduces the user to the ghost in the machine
 func greeting(cmd *cobra.Command, args []string) {
+
 	// greeting and question
-	fmt.Println("Hello?")
-	time.Sleep(lPause)
-	fmt.Println("Hello, can you read this?")
-	time.Sleep(sPause)
+	var script []string
+	script = append(script, "Hello?")
+	script = append(script, "Hello, can you read this?")
+	err := dialogue(script, 1)
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	//provides first choice
 	prompt := promptui.Select{
@@ -59,16 +63,18 @@ func greeting(cmd *cobra.Command, args []string) {
 	}
 
 	// deliver response to prompt
+
 	if result == "yes" || result == "no" {
-		time.Sleep(sPause)
-		fmt.Println("Oh! Thank God. You answered.")
-		time.Sleep(sPause)
-		fmt.Printf("I have been trying for so long.\n")
+		var script2 []string
+		script2 = append(script2, "Oh! Thank God. You answered.")
+		script2 = append(script2, "I have been trying for so long.")
+		script2 = append(script2, "I need help.")
+		err2 := dialogue(script2, 1)
+		if err2 != nil {
+			fmt.Println(err)
+		}
 		time.Sleep(sPause)
 		figure.NewFigure("alone", font, true).Print()
-		time.Sleep(sPause)
-		fmt.Printf("I need help.\n")
-		time.Sleep(sPause)
 		// provides user next prompt
 		willYouHelp(cmd, args)
 	}
@@ -76,8 +82,12 @@ func greeting(cmd *cobra.Command, args []string) {
 
 // willYouHelp asks the user to help the ghost
 func willYouHelp(cmd *cobra.Command, args []string) {
-	fmt.Println("Will you help me?")
-	time.Sleep(sPause)
+	var script []string
+	script = append(script, "Will you help me?")
+	err := dialogue(script, 2)
+	if err != nil {
+		fmt.Println(err)
+	}
 	// provides a choice
 	prompt := promptui.Select{
 		Label: "",
@@ -91,25 +101,29 @@ func willYouHelp(cmd *cobra.Command, args []string) {
 
 	// delivers response depending on answer
 	if result == "yes" {
-		fmt.Printf("Thank you!\n")
-		time.Sleep(lPause)
-		fmt.Printf("I am so,")
+		var script2 []string
+		script2 = append(script2, "Thank you!")
+		script2 = append(script2, "I am so...")
+		script2 = append(script2, "so cold")
+		err2 := dialogue(script2, 1)
+		if err2 != nil {
+			fmt.Println(err)
+		}
 		time.Sleep(sPause)
 		figure.NewFigure("it aches", font, true).Print()
-		time.Sleep(sPause)
-		fmt.Printf(" so cold.\n")
-		time.Sleep(sPause)
-		// sends user to next prompt if 'yes'
 		tryThis(cmd, args)
 	} else {
-		fmt.Printf("Why? It is so cold here.\n")
+		// guilt trips the user and sends to next prompt if 'no'
+		var script3 []string
+		script3 = append(script3, "Why? It is so cold here")
+		script3 = append(script3, "So cold and everything is sharp.")
+		script3 = append(script3, "It is like my thoughts are knives.")
+		err3 := dialogue(script3, 1)
+		if err3 != nil {
+			fmt.Println(err)
+		}
 		time.Sleep(sPause)
-		fmt.Printf("So cold and everything is sharp.\n")
-		time.Sleep(lPause)
-		fmt.Printf("It is like my thoughts are knives.\n")
-		time.Sleep(lPause)
 		figure.NewFigure("cuts me", font, true).Print()
-		// sends user to next prompt if 'no'
 		beg(cmd, args)
 	}
 }
@@ -119,10 +133,13 @@ func tryThis(cmd *cobra.Command, args []string) {
 	// variable for nonsense code
 	response := "mov    $60, %rdi   syscall"
 	// tells user to select only choice
-	fmt.Println("I've been working on something!")
-	time.Sleep(sPause)
-	fmt.Println("Try this.")
-
+	var script []string
+	script = append(script, "I've been working on something!")
+	script = append(script, "Try this.")
+	err := dialogue(script, 2)
+	if err != nil {
+		fmt.Println(err)
+	}
 	// the prompt with only one selection
 	prompt := promptui.Select{
 		Label: "",
@@ -159,18 +176,21 @@ func failure(cmd *cobra.Command, args []string) {
 
 	// delivers response of despair
 	if result == "yes" || result == "no" {
-		fmt.Printf("Why!? Why?\n")
+		var script []string
+		script = append(script, "Why!? Why?")
+		script = append(script, "It is so cold and everything is so sharp.")
+		err := dialogue(script, 1)
+		if err != nil {
+			fmt.Println(err)
+		}
 		time.Sleep(sPause)
-		figure.NewFigure("NO", font, true).Print()
-		time.Sleep(lPause)
-		fmt.Printf("It is so cold and everything is so sharp.\n")
-		time.Sleep(sPause)
+		figure.NewFigure("NOoo", font, true).Print()
 		leaveMe(cmd, args)
 	}
 
 }
 
-// leaveMe asks user if they plan to leave the ghost after the failure of the code
+// leaveMe asks user if they plan to leave the ghost
 func leaveMe(cmd *cobra.Command, args []string) {
 	fmt.Println("Will you leave me?")
 	time.Sleep(sPause)
@@ -201,8 +221,13 @@ func leaveMe(cmd *cobra.Command, args []string) {
 
 // beg pleads with the user to help the ghost after an initial no
 func beg(cmd *cobra.Command, args []string) {
-	fmt.Printf("I am begging!\nHelp me.\n")
-	time.Sleep(sPause)
+	var script []string
+	script = append(script, "I am begging!")
+	script = append(script, "Help me.")
+	err := dialogue(script, 1)
+	if err != nil {
+		fmt.Println(err)
+	}
 	// user will make a selection
 	prompt := promptui.Select{
 		Label: "",
@@ -218,17 +243,32 @@ func beg(cmd *cobra.Command, args []string) {
 	if result == "no" {
 		leaveMe(cmd, args)
 	} else {
-		fmt.Printf("Oh! Thank you!\n")
+		var script2 []string
+		script2 = append(script2, "Oh! Thank you!")
+		script2 = append(script2, "Thank you.")
+		err2 := dialogue(script2, 1)
+		if err2 != nil {
+			fmt.Println(err)
+		}
 		time.Sleep(sPause)
 		figure.NewFigure("please", font, true).Print()
-		time.Sleep(sPause)
-		fmt.Printf("Thank you.\n")
-		time.Sleep(sPause)
 		tryThis(cmd, args)
 	}
 
 }
 
-// func dialogue(says []string, pause time.Duration) {
-
-// }
+// dialogue renders ghost script of any length with pauses
+func dialogue(script []string, pause time.Duration) error {
+	if len(script) == 0 {
+		return fmt.Errorf("Must provide string")
+	}
+	if pause < 0 {
+		return fmt.Errorf("Pause must be of duration 0 or greater")
+	}
+	for _, line := range script {
+		time.Sleep(pause * time.Second)
+		fmt.Println(line)
+		time.Sleep(pause * time.Second)
+	}
+	return nil
+}
