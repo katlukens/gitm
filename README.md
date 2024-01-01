@@ -1,14 +1,23 @@
 # Ghost In The Machine
 #### **Video Demo:** <TODO: URL>
 #### **Discription:**
-Ghost In The Machine is a command line paranormal horror story/ game. The user will interact with an unknown entity via the command line.
-It was inspired by my love of the spooky. The largest insperation for this project was the podcast "The Magnus Archives" by [Rusty Quill](https://rustyquill.com/show/the-magnus-archives/).
+Ghost In The Machine is a command line paranormal horror story/ game. The user will interact with an unknown entity (the ghost) via the command line.
+It was inspired by my love of the spooky. The tone and expierence of the ghost was inspired by the podcast "The Magnus Archives" #65: Bianry by [Rusty Quill](https://rustyquill.com/show/the-magnus-archives/).
 
-It is written Go using promptui, go-figure, and cobra.
+As you answer the ghost's questions you learn more about their expierence and even see some of their inner thoughts represented through ascii text.
 
-If you would like to download this very short game ...
+This game is written Go using [promptui](https://github.com/manifoldco/promptui), [go-figure](https://github.com/common-nighthawk/go-figure), and [cobra](https://github.com/spf13/cobra).
+My profound thanks to these creators. Without these packages my game would not be engageing or even possible.
 
-## Examples to use later
+If you would like to play this very short game:
+1. [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository
+2. run `go build` in your terminal
+
+
+Inside `gtim` you will find `cmd`.
+The `cmd` folder contains `root.go` which is the game _Ghost In The Machine_. The user responds via yes and no questions to the ghost without ever leaving the program. I entertained the idea of using cobra to create custom commands that had the user stoping and starting diffrent programs. In the end I decided the more linear expierence of remaing in a single program was better for the story.
+
+## This function controls the speed of the ghost's messages to the user
 ```go
 // dialogue renders ghost script of any length with pauses
 func dialogue(script []string, pause time.Duration) error {
