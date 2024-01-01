@@ -1,13 +1,13 @@
 # Ghost In The Machine
 #### **Video Demo:** <TODO: URL>
-#### **Discription:**
-Ghost In The Machine is a command line paranormal horror story/ game. The user will interact with an unknown entity (the ghost) via the command line.
+#### **Description:**
+Ghost In The Machine is a command line paranormal horror story game. The user will interact with an unknown entity (the ghost) via the command line.
 It was inspired by my love of the spooky. The tone and expierence of the ghost was inspired by the podcast "The Magnus Archives" #65: Bianry by [Rusty Quill](https://rustyquill.com/show/the-magnus-archives/).
 
 As you answer the ghost's questions you learn more about their expierence and even see some of their inner thoughts represented through ascii text.
 
 This game is written Go using [promptui](https://github.com/manifoldco/promptui), [go-figure](https://github.com/common-nighthawk/go-figure), and [cobra](https://github.com/spf13/cobra).
-My profound thanks to these creators. Without these packages my game would not be engageing or even possible.
+My profound thanks to these creators, who made it possible.
 
 If you would like to play this very short game:
 1. [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository
@@ -52,4 +52,4 @@ flowchart TD
 
 
 ### Creator's Note
-The situation wherein the user will probally force quit the program is a styleistic choice, not an error in programing.
+The situation wherein the user will probally force quit the program is a stylistic choice, not an error in programing.
