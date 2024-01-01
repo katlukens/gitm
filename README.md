@@ -1,5 +1,5 @@
 # Ghost In The Machine
-#### **Video Demo:** <TODO: URL>
+#### **Video Demo:** [video](https://youtu.be/l_JxoZMVObg)
 #### **Description:**
 Ghost In The Machine is a command line paranormal horror story game. The user will interact with an unknown entity (the ghost) via the command line.
 It was inspired by my love of the spooky. The tone and expierence of the ghost was inspired by the podcast "The Magnus Archives" #65: Bianry by [Rusty Quill](https://rustyquill.com/show/the-magnus-archives/).
