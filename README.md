@@ -4,8 +4,9 @@
 Ghost In The Machine is a command line paranormal horror story/ game. The user will interact with an unknown entity via the command line.
 It was inspired by my love of the spooky. The largest insperation for this project was the podcast "The Magnus Archives" by Rusty Quill.
 
-It is written using golang and cobra_cli.
-These are the instructions for downloading it. ...
+It is written Go using promptui, go-figure, and cobra.
+
+If you would like to download this very short game ...
 
 ## Examples to use later
 ```python
@@ -29,4 +30,4 @@ flowchart TD
 
 
 ### Creator's Note
-The situation wherein the user must force quit the program is a styleistic choice, not an error in programing.
+The situation wherein the user will probally force quit the program is a styleistic choice, not an error in programing.
