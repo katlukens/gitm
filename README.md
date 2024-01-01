@@ -35,7 +35,7 @@ func dialogue(script []string, pause time.Duration) error {
 	return nil
 }
 ```
-I found without pause in message length the ghost felt empty and flat.
+I found without pause in message speed the ghost felt empty and flat.
 
 ## Story Flow (spoilers!)
 ```mermaid
