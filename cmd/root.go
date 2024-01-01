@@ -43,10 +43,10 @@ func Execute() {
 func greeting(cmd *cobra.Command, args []string) {
 
 	// greeting and question
-	var script []string
-	script = append(script, "Hello?")
-	script = append(script, "Hello, can you read this?")
-	err := dialogue(script, 1)
+	var scriptGreet []string
+	scriptGreet = append(scriptGreet, "Hello?")
+	scriptGreet = append(scriptGreet, "Hello, can you read this?")
+	err := dialogue(scriptGreet, 1)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -65,11 +65,11 @@ func greeting(cmd *cobra.Command, args []string) {
 	// deliver response to prompt
 
 	if result == "yes" || result == "no" {
-		var script2 []string
-		script2 = append(script2, "Oh! Thank God. You answered.")
-		script2 = append(script2, "I have been trying for so long.")
-		script2 = append(script2, "I need help.")
-		err2 := dialogue(script2, 1)
+		var scriptFollowup []string
+		scriptFollowup = append(scriptFollowup, "Oh! Thank God. You answered.")
+		scriptFollowup = append(scriptFollowup, "I have been trying for so long.")
+		scriptFollowup = append(scriptFollowup, "I need help.")
+		err2 := dialogue(scriptFollowup, 1)
 		if err2 != nil {
 			fmt.Println(err)
 		}
@@ -82,9 +82,9 @@ func greeting(cmd *cobra.Command, args []string) {
 
 // willYouHelp asks the user to help the ghost
 func willYouHelp(cmd *cobra.Command, args []string) {
-	var script []string
-	script = append(script, "Will you help me?")
-	err := dialogue(script, 2)
+	var scriptPlead []string
+	scriptPlead = append(scriptPlead, "Will you help me?")
+	err := dialogue(scriptPlead, 2)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -101,11 +101,11 @@ func willYouHelp(cmd *cobra.Command, args []string) {
 
 	// delivers response depending on answer
 	if result == "yes" {
-		var script2 []string
-		script2 = append(script2, "Thank you!")
-		script2 = append(script2, "I am so...")
-		script2 = append(script2, "so cold")
-		err2 := dialogue(script2, 1)
+		var scriptThank []string
+		scriptThank = append(scriptThank, "Thank you!")
+		scriptThank = append(scriptThank, "I am so...")
+		scriptThank = append(scriptThank, "so cold")
+		err2 := dialogue(scriptThank, 1)
 		if err2 != nil {
 			fmt.Println(err)
 		}
@@ -114,11 +114,11 @@ func willYouHelp(cmd *cobra.Command, args []string) {
 		tryThis(cmd, args)
 	} else {
 		// guilt trips the user and sends to next prompt if 'no'
-		var script3 []string
-		script3 = append(script3, "Why? It is so cold here")
-		script3 = append(script3, "So cold and everything is sharp.")
-		script3 = append(script3, "It is like my thoughts are knives.")
-		err3 := dialogue(script3, 1)
+		var scriptNoWhy []string
+		scriptNoWhy = append(scriptNoWhy, "Why? It is so cold here.")
+		scriptNoWhy = append(scriptNoWhy, "So cold and everything is sharp.")
+		scriptNoWhy = append(scriptNoWhy, "It is like my thoughts are knives.")
+		err3 := dialogue(scriptNoWhy, 1)
 		if err3 != nil {
 			fmt.Println(err)
 		}
@@ -133,10 +133,10 @@ func tryThis(cmd *cobra.Command, args []string) {
 	// variable for nonsense code
 	response := "mov    $60, %rdi   syscall"
 	// tells user to select only choice
-	var script []string
-	script = append(script, "I've been working on something!")
-	script = append(script, "Try this.")
-	err := dialogue(script, 2)
+	var scriptTry []string
+	scriptTry = append(scriptTry, "I've been working on something!")
+	scriptTry = append(scriptTry, "Try this.")
+	err := dialogue(scriptTry, 2)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -176,10 +176,10 @@ func failure(cmd *cobra.Command, args []string) {
 
 	// delivers response of despair
 	if result == "yes" || result == "no" {
-		var script []string
-		script = append(script, "Why!? Why?")
-		script = append(script, "It is so cold and everything is so sharp.")
-		err := dialogue(script, 1)
+		var scriptFail []string
+		scriptFail = append(scriptFail, "Why!? Why?")
+		scriptFail = append(scriptFail, "It is so cold and everything is so sharp.")
+		err := dialogue(scriptFail, 1)
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -221,10 +221,10 @@ func leaveMe(cmd *cobra.Command, args []string) {
 
 // beg pleads with the user to help the ghost after an initial no
 func beg(cmd *cobra.Command, args []string) {
-	var script []string
-	script = append(script, "I am begging!")
-	script = append(script, "Help me.")
-	err := dialogue(script, 1)
+	var scriptBeg []string
+	scriptBeg = append(scriptBeg, "I am begging!")
+	scriptBeg = append(scriptBeg, "Help me.")
+	err := dialogue(scriptBeg, 1)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -243,10 +243,10 @@ func beg(cmd *cobra.Command, args []string) {
 	if result == "no" {
 		leaveMe(cmd, args)
 	} else {
-		var script2 []string
-		script2 = append(script2, "Oh! Thank you!")
-		script2 = append(script2, "Thank you.")
-		err2 := dialogue(script2, 1)
+		var scriptBigThank []string
+		scriptBigThank = append(scriptBigThank, "Oh! Thank you!")
+		scriptBigThank = append(scriptBigThank, "Thank you.")
+		err2 := dialogue(scriptBigThank, 1)
 		if err2 != nil {
 			fmt.Println(err)
 		}
